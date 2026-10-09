@@ -1,0 +1,40 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: dpcoe_mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - dpcoe-net
+
+  backend:
+    build: ./backend
+    container_name: dpcoe_backend
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - MONGO_URI=mongodb://mongodb:27017/dpcoe_cinema
+    depends_on:
+      - mongodb
+    networks:
+      - dpcoe-net
+
+  frontend:
+    build: ./frontend
+    container_name: dpcoe_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - dpcoe-net
+
+volumes:
+  mongo_data:
+
+networks:
+  dpcoe-net:
+    driver: bridge

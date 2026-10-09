@@ -1,0 +1,11 @@
+{
+  "name": "mini",
+  "version": "1.0.0",
+  "description": "MOVIE BOOKING SYSTERM ",
+  "author": "OM GHODKE",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
