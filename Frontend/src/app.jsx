@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import SeatBooking from './pages/SeatBooking';
 import MyBookings from './pages/MyBookings';
+
 import Filter from './pages/filter';
 
 function App() {
@@ -41,8 +42,9 @@ function App() {
               path="/book/:id" 
               element={user ? <SeatBooking user={user} /> : <Navigate to="/login" />} 
             />
+            <Route path="/bookings" element={<MyBookings user={user} />} />
             <Route 
-              path="/my-bookings" 
+              path="/My-Bookings" 
               element={user ? <MyBookings user={user} /> : <Navigate to="/login" />} 
             />
             <Route path="/filter" element={<Filter />} />

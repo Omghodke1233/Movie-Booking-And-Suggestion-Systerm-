@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 // MongoDB Connection
-const MONGO_URI = 'mongodb://localhost:27017/test';
+const MONGO_URI = 'mongodb://omghodke33_db_user:cYFSQ839LOF043XZ@ac-ijtswvf-shard-00-00.ntiixin.mongodb.net:27017,ac-ijtswvf-shard-00-01.ntiixin.mongodb.net:27017,ac-ijtswvf-shard-00-02.ntiixin.mongodb.net:27017/?ssl=true&replicaSet=atlas-14drv8-shard-0&authSource=admin';
 
 mongoose.connect(MONGO_URI, { family: 4 })
   .then(() => {
